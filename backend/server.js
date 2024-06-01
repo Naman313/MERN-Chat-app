@@ -8,13 +8,13 @@ import messagesRoutes from "./routes/messages.routes.js"
 import userRoutes from "./routes/user.routes.js"
 
 import connectToMongoDb from "./db/connectTomongodb.js"
-
+import cors from 'cors';
 const app= express()
 dotenv.config();
-const PORT= process.env.PORT || 3000 ;
+const PORT=  5000 ;
 
 
-
+app.use(cors());
 app.use(express.json());//to parse the incoming requests with JSON payloads (from req.body)
 app.use(cookieParser());//to parse the cookies in protectRoute 
 
